@@ -9,14 +9,12 @@ test("should take in a value from the user and store it", () => {
   render(<Input {...testProps} />);
   const input = screen.getByTestId("searched");
   input.value = "London";
-  expect(input).toHaveValue("Paris");
+  expect(input).toHaveValue("London");
 });
 
-test("should set state to the user input and display fetched data", () => {
+test("should call the getInput function on button click", () => {
   render(<Input {...testProps} />);
   const button = screen.getByText("Search");
-  const input = screen.getByTestId("searched");
-  input.value = "London";
   fireEvent.click(button);
-  expect(input.value).toBeInTheDocument();
+  expect(testProps.getInput).toHaveBeenCalledTimes(1);
 });

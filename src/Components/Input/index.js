@@ -11,7 +11,6 @@ export default function Input({ getInput }) {
   function handleClick() {
     getInput(city);
   }
-
   return (
     <div>
       <input type="text" onChange={handleChange} data-testid="searched"></input>
