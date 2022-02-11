@@ -34,7 +34,17 @@ function Display() {
     <div>
       <Input getInput={getInput} />
       <p>{data.name}</p>
-      {data.weather && <p>{data.weather[0].description}</p>}
+
+      {data.weather && (
+        <div>
+          <p>{data.main.temp} °C</p>
+          <p>{data.weather[0].description}</p>
+          <img
+            src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+            alt="weather icon"
+          />
+        </div>
+      )}
     </div>
   );
 }
