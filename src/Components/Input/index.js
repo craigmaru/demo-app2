@@ -1,10 +1,16 @@
 import React from "react";
+import { useState } from "react";
 
 export default function Input() {
-   return (
-      <div>
-         <input type="text"></input>
-         <button type="submit">Search</button>
-      </div>
-   );
+  const [search, setSearch] = useState("");
+
+  function handleChange(e) {
+    setSearch(e.target.value);
+  }
+  return (
+    <div>
+      <input type="text" onChange={handleChange}></input>
+      <button type="submit">Search</button>
+    </div>
+  );
 }
