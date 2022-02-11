@@ -14,7 +14,7 @@ export default function Input({ getInput }) {
 
   return (
     <div>
-      <input type="text" onChange={handleChange}></input>
+      <input type="text" onChange={handleChange} data-testid="searched"></input>
       <button type="submit" onClick={handleClick}>
         Search
       </button>
